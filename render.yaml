@@ -12,6 +12,6 @@ services:
     buildCommand: pip install -r requirements.txt
     # gunicorn sirve el objeto WSGI `server` definido en flight_delay.py.
     # Render asigna el puerto en la variable PORT (por defecto 10000).
-    startCommand: gunicorn dashboard_Final_Project:server --bind 0.0.0.0:$PORT
+    startCommand: gunicorn dashboard:server --bind 0.0.0.0:$PORT
     healthCheckPath: /
     autoDeployTrigger: commit
