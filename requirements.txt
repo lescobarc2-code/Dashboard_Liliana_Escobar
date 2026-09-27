@@ -31,7 +31,7 @@ tzdata==2026.4
 urllib3==2.8.0
 Werkzeug==3.1.8
 zipp==4.1.0
-
+ipython
 # Servidor WSGI de produccion (Linux / plataformas de despliegue).
 # Sin pin de version a proposito: en Windows no se puede ejecutar (depende de
 # `fcntl`), pero si instalar, y un pin inventado romperia el despliegue.
