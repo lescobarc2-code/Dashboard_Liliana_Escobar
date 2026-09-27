@@ -1,0 +1,17 @@
+# Blueprint de Render (infraestructura como codigo).
+# Uso: Render Dashboard > New > Blueprint > elegir este repositorio.
+# Render lee este archivo y crea el servicio web ya configurado, sin rellenar
+# formularios a mano.
+services:
+  - type: web
+    name: flight-delay-dashboard
+    runtime: python
+    # OJO: el plan por defecto de un servicio nuevo es 0.5c-512mb (de pago).
+    # Hay que declarar `free` explicitamente para no generar cargos.
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    # gunicorn sirve el objeto WSGI `server` definido en flight_delay.py.
+    # Render asigna el puerto en la variable PORT (por defecto 10000).
+    startCommand: gunicorn flight_delay:server --bind 0.0.0.0:$PORT
+    healthCheckPath: /
+    autoDeployTrigger: commit
