@@ -131,19 +131,19 @@ def get_graph(entered_year):
 
     # Line plot for carrier delay
     carrier_fig = px.line(avg_car, x='Month', y='CarrierDelay', color='Reporting_Airline',
-                          title='Average carrrier delay time (minutes) by airline')
+                          title='Tiempo promedio de retraso del transportista (minutos) por aerolinea')
     # Line plot for weather delay
     weather_fig = px.line(avg_weather, x='Month', y='WeatherDelay', color='Reporting_Airline',
-                          title='Average weather delay time (minutes) by airline')
+                          title='Tiempo promedio de retraso por mal tiempo (minutos) por aerolinea')
     # Line plot for nas delay
     nas_fig = px.line(avg_NAS, x='Month', y='NASDelay', color='Reporting_Airline',
-                      title='Average NAS delay time (minutes) by airline')
+                      title='Tiempo promedio de retraso del NAS (minutos) por aerolinea')
     # Line plot for security delay
     sec_fig = px.line(avg_sec, x='Month', y='SecurityDelay', color='Reporting_Airline',
-                      title='Average security delay time (minutes) by airline')
+                      title='Tiempo promedio de retraso de seguridad (minutos) por aerolinea')
     # Line plot for late aircraft delay
     late_fig = px.line(avg_late, x='Month', y='LateAircraftDelay', color='Reporting_Airline',
-                       title='Average late aircraft delay time (minutes) by airline')
+                       title='Tiempo promedio de retraso por llegada de avión (minutos) por aerolinea')
 
     return [carrier_fig, weather_fig, nas_fig, sec_fig, late_fig]
 
